@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "target": "es6",
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "@fw/*": ["framework/*"],
+      "@calendar/*": ["projects/calendar/*"],
+      "@select/*": ["projects/select/*"],
+      "@connect4/*": ["projects/connect4/*"],
+    },
+    "jsx": "react",
+    "jsxFactory": "elements.createElement",
+    // "jsxFragmentFactory": "elements.Fragment", // TODO (feature) make it use my own fragment
+    // or fork it seeing as it's not maintained (2yrs)
+  },
+  "lib": ["es2015"],
+  "exclude": ["node_modules", "dist"],
+  "include": ["./framework/**/*", "./projects/**/*"]
+}
