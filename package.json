@@ -9,6 +9,8 @@
     "select:start": "cross-env NODE_ENV=production node dist/projects/select/app.js",
     "connect4:dev": "concurrently -n NODE,TSC -c reset,bold -k \"nodemon --watch dist -e ts,tsx,js,json --delay 250ms --signal SIGINT dist/projects/connect4/app.js\" \"tsc -w --preserveWatchOutput\" \"tsc-alias -w\"",
     "connect4:start": "cross-env NODE_ENV=production node dist/projects/connect4/app.js",
+    "toast:dev": "concurrently -n NODE,TSC -c reset,bold -k \"nodemon --watch dist -e ts,tsx,js,json --delay 250ms --signal SIGINT dist/projects/toast/app.js\" \"tsc -w --preserveWatchOutput\" \"tsc-alias -w\"",
+    "toast:start": "cross-env NODE_ENV=production node dist/projects/toast/app.js",
     "build": "cross-env NODE_ENV=production tsc && tsc-alias && npm run tw",
     "tw": "npx tailwindcss -i ./framework/styles.css -o ./dist/styles.css --minify",
     "lint": "eslint . --ext .ts",

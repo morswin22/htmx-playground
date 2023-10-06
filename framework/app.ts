@@ -3,6 +3,7 @@ import { handleLiveReload } from "@fw/components/LiveReload";
 import { errorLogger, routeLogger } from "@fw/logger";
 import { handleTailwind } from "@fw/components/Tailwind";
 import cookieParser from "cookie-parser";
+import { handleToast } from "@toast/components/toast";
 
 type AppConfig = {
   port: number;
@@ -26,6 +27,7 @@ export async function createApp(partialConfig?: Partial<AppConfig>): Promise<App
   app.use(cookieParser("secret")); // TODO (feature) use env var
   // app.use(express.json());
   // app.use(express.urlencoded());
+  app.use(express.text({ type: "*/*" }));
 
   const start = (routers: express.Router[] = []) => {
     if (process.env.NODE_ENV !== "production") {
@@ -37,6 +39,8 @@ export async function createApp(partialConfig?: Partial<AppConfig>): Promise<App
     if (process.env.NODE_ENV === "production") {
       app.use(handleTailwind());
     }
+
+    app.use(handleToast());
 
     for (const router of routers) {
       app.use(router);

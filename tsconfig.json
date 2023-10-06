@@ -13,6 +13,7 @@
       "@calendar/*": ["projects/calendar/*"],
       "@select/*": ["projects/select/*"],
       "@connect4/*": ["projects/connect4/*"],
+      "@toast/*": ["projects/toast/*"],
     },
     "jsx": "react",
     "jsxFactory": "elements.createElement",

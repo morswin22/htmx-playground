@@ -2,6 +2,7 @@ import * as elements from "typed-html";
 import { LiveReload } from "@fw/components/LiveReload";
 import { Navbar } from "@fw/components/Navbar";
 import { Tailwind } from "@fw/components/Tailwind";
+import { Toaster } from "@toast/components/toast";
 
 export default function Layout({ children }: elements.Attributes) {
   return (
@@ -19,6 +20,7 @@ export default function Layout({ children }: elements.Attributes) {
       <body class="flex flex-col h-[100svh] bg-gray-50 dark:bg-gray-800 text-black dark:text-white">
         <Navbar />
         {children}
+        <Toaster />
         <LiveReload />
       </body>
     </html>
