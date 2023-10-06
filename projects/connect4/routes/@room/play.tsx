@@ -2,7 +2,7 @@ import { Router } from "express";
 import { updateClients } from "./updates";
 import { rooms, boardSize, Room, Board, getPlayer, Connect4Room } from ".";
 import * as elements from "typed-html";
-import CenteredLayout from "@fw/layouts/centered";
+import { CenteredLayout } from "@fw/components/CenteredLayout";
 
 export function handle() {
   const router = Router({ mergeParams: true }); // TODO (idea) this might be needed to set to all the routes
@@ -118,6 +118,7 @@ export function handle() {
       ));
     } else if (room.state === "finished") {
       res.send((
+        // TODO (simplification) do i really need to do this on the CenteredLayout directly? cannot i use a div?
         <CenteredLayout hx-swap-oob="outerHTML:main">
           <Connect4Room room={room} player={player} />
         </CenteredLayout>

@@ -1,9 +1,9 @@
 import * as elements from "typed-html";
 import { Router, Handler, Request } from "express";
-import BaseLayout from "@fw/layouts/base";
 import fs from "fs";
 import { getCaller } from "./utils/stack";
 import pathModule from "path";
+import { RootLayout } from "./components/RootLayout";
 // import { validateContextsBegin } from "./utils/context";
 
 // TODO (feature) support for async routes (Layout, Page, getParams)
@@ -34,7 +34,7 @@ export function handleRoutes(partialConfig: Partial<RendererConfig>) {
   const config: RendererConfig = {
     indexName: "index",
     paramsSymbol: "@", // ":" is not allowed in filenames
-    FallbackLayout: BaseLayout,
+    FallbackLayout: RootLayout,
     ...partialConfig,
   };
 

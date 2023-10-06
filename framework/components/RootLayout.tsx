@@ -4,7 +4,7 @@ import { Navbar } from "@fw/components/Navbar";
 import { Tailwind } from "@fw/components/Tailwind";
 import { Toaster } from "@toast/components/toast";
 
-export default function Layout({ children }: elements.Attributes) {
+export function RootLayout({ children }: elements.Attributes) {
   return (
     <html>
       <head>

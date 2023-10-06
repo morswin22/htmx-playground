@@ -1,7 +1,7 @@
 import { createApp } from "@fw/app";
 import { handleRoutes } from "@fw/render";
 import { handleSelect } from "@select/components/Select";
-import CenteredLayout from "@fw/layouts/centered";
+import { CenteredLayout } from "@fw/components/CenteredLayout";
 
 createApp().then((app) => {
   app.start([

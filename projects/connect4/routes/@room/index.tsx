@@ -1,5 +1,5 @@
 import { Handler, Request, Response } from "express";
-import CenteredLayout from "@fw/layouts/centered";
+import { CenteredLayout } from "@fw/components/CenteredLayout";
 import * as elements from "typed-html";
 import { Fragment } from "@fw/components/Fragment";
 import crypto from "crypto";
